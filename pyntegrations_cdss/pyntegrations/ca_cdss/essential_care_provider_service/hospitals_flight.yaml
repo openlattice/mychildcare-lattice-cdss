@@ -1,0 +1,38 @@
+associationDefinitions: {}
+entityDefinitions:
+  entity:
+    entitySetName: EssentialCareProviderServices_Hospitals
+    fqn: ecps.essential_care_provider_service
+    propertyDefinitions:
+      ecps.capacity_age_unknown:
+        column: capacity_age_unknown
+        type: ecps.capacity_age_unknown
+      ecps.facility_address:
+        column: facility_address
+        type: ecps.facility_address
+      ecps.facility_city:
+        column: facility_city
+        type: ecps.facility_city
+      ecps.facility_name:
+        column: facility_name
+        type: ecps.facility_name
+      ecps.facility_type:
+        column: facility_type
+        type: ecps.facility_type
+      ecps.facility_zip:
+        column: facility_zip
+        type: ecps.facility_zip
+      ecps.locationcoordinates:
+        column: locationcoordinates
+        type: ecps.locationcoordinates
+      ecps.google_place_id:
+        column: google_place_id
+        type: ecps.google_place_id
+      ol.datasource:
+        column: datasource
+        type: ol.datasource
+      ol.id:
+        column: id
+        type: ol.id
+    updateType: PartialReplace
+organizationId: 5752d58c-68a5-44b0-906b-67e885d41762
