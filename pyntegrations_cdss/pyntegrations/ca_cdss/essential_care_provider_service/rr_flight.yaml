@@ -1,0 +1,47 @@
+associationDefinitions: {}
+entityDefinitions:
+  entity:
+    entitySetName: EssentialCareProviderServices_RR
+    fqn: ecps.essential_care_provider_service
+    propertyDefinitions:
+      ecps.facility_address:
+        column: facility_address
+        type: ecps.facility_address
+      ecps.facility_city:
+        column: facility_city
+        type: ecps.facility_city
+      ecps.facility_county:
+        column: facility_county
+        type: ecps.facility_county
+      ecps.facility_email:
+        column: rr_email
+        type: ecps.facility_email
+      ecps.facility_name:
+        column: facility_name
+        type: ecps.facility_name
+      ecps.facility_phone:
+        column: facility_phone
+        type: ecps.facility_phone
+      ecps.facility_type:
+        column: facility_type
+        type: ecps.facility_type
+      ecps.facility_zip:
+        column: facility_zip
+        type: ecps.facility_zip
+      ecps.facility_zip_served_string: #TODO: use property multiplicity
+        column: facility_zip_served_string #TODO: use property multiplicity
+        type: ecps.facility_zip_served_string #TODO: use property multiplicity
+      ecps.locationcoordinates:
+        column: locationcoordinates
+        type: ecps.locationcoordinates
+      ecps.url:
+        column: url
+        type: ecps.url
+      ol.datasource:
+        column: datasource
+        type: ol.datasource
+      ol.id:
+        column: id
+        type: ol.id
+    updateType: PartialReplace
+organizationId: 5752d58c-68a5-44b0-906b-67e885d41762

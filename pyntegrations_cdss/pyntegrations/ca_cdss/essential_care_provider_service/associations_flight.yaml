@@ -1,0 +1,55 @@
+associationDefinitions:
+  partof:
+    src: ccp
+    dst: rr
+    entitySetName: EssentialCareProviderServices_PartOf
+    fqn: ol.partof
+    propertyDefinitions:
+      ol.id:
+        column: id_partof
+        type: ol.id
+
+  closeto:
+    src: ccp
+    dst: hospital
+    entitySetName: EssentialCareProviderServices_CloseTo
+    fqn: ecps.close_to
+    propertyDefinitions:
+      ecps.distance_miles:
+        column: distance_miles
+        type: ecps.distance_miles
+      ol.id:
+        column: id_closeto
+        type: ol.id
+
+entityDefinitions:
+  rr:
+    entitySetName: EssentialCareProviderServices_RR
+    fqn: ecps.essential_care_provider_service
+    name: rr
+    propertyDefinitions:
+      ol.id:
+        column: id_rr
+        type: ol.id
+    associateOnly: true
+
+  ccp:
+    entitySetName: DssEssentialCareProviderServices
+    fqn: ecps.essential_care_provider_service
+    name: ccp
+    propertyDefinitions:
+      ol.id:
+        column: id_ccp
+        type: ol.id
+    associateOnly: true
+
+  hospital:
+    entitySetName: EssentialCareProviderServices_Hospitals
+    fqn: ecps.essential_care_provider_service
+    name: hospital
+    propertyDefinitions:
+      ol.id:
+        column: id_hospital
+        type: ol.id
+
+organizationId: 5752d58c-68a5-44b0-906b-67e885d41762

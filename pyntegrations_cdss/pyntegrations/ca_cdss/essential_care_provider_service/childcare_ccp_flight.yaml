@@ -1,0 +1,127 @@
+organizationId: 5752d58c-68a5-44b0-906b-67e885d41762
+associationDefinitions: {}
+entityDefinitions:
+  entity:
+    entitySetName: DssEssentialCareProviderServices
+    fqn: ecps.essential_care_provider_service
+    updateType: PartialReplace
+    propertyDefinitions:
+      ecps.capacity_age_unknown:
+        column: capacity_age_unknown
+        type: ecps.capacity_age_unknown
+      ecps.clients_served:
+        column: clients_served
+        type: ecps.clients_served
+      ecps.facility_address:
+        column: facility_address
+        type: ecps.facility_address
+      ecps.facility_city:
+        column: facility_city
+        type: ecps.facility_city
+      ecps.facility_email:
+        column: facility_email
+        type: ecps.facility_email
+      ecps.facility_name:
+        column: facility_name
+        type: ecps.facility_name
+      ecps.facility_phone:
+        column: facility_phone
+        type: ecps.facility_phone
+      ecps.facility_type:
+        column: facility_type
+        type: ecps.facility_type
+      ecps.facility_zip:
+        column: facility_zip
+        type: ecps.facility_zip
+      ecps.friday_end:
+        column: friday_end
+        type: ecps.friday_end
+      ecps.friday_start:
+        column: friday_start
+        type: ecps.friday_start
+      ecps.hide_contact:
+        column: hide_contact
+        type: ecps.hide_contact
+      ecps.hide_location:
+        column: hide_location
+        type: ecps.hide_location
+      ecps.hours_unknown:
+        column: hours_unknown
+        type: ecps.hours_unknown
+      ecps.last_updated:                  # last updated BY OPENLATTICE. (when website was last updated)
+        column: last_updated
+        type: ecps.last_updated
+      ecps.license_last_inspection_date:  #from CDN static data of last visit
+        column: license_last_inspection_date
+        type: ecps.license_last_inspection_date
+      ecps.last_modified:                 # date modified provided by CDSS, from the closures table
+        type: ecps.last_modified
+        column: last_modified
+      ecps.vacancies:
+        column: vacancies
+        type: ecps.vacancies
+      ecps.vacancy_last_updated:
+        type: ecps.vacancy_last_updated
+        column: vacancy_last_updated      # date that vacancy info was last reported in facility_universe table
+      ecps.license_complaints:            # Type A complaints from facility universe files
+        column: license_complaints
+        type: ecps.license_complaints
+      ecps.license_number:
+        column: license_number
+        type: ecps.license_number
+      ecps.license_type:
+        column: license_type
+        type: ecps.license_type
+      ecps.license_url:
+        column: license_url
+        type: ecps.license_url
+      ecps.locationcoordinates:
+        column: locationcoordinates
+        type: ecps.locationcoordinates
+      ecps.monday_end:
+        column: monday_end
+        type: ecps.monday_end
+      ecps.monday_start:
+        column: monday_start
+        type: ecps.monday_start
+      ecps.saturday_end:
+        column: saturday_end
+        type: ecps.saturday_end
+      ecps.saturday_start:
+        column: saturday_start
+        type: ecps.saturday_start
+      ecps.status:
+        column: status
+        type: ecps.status
+      ecps.sunday_end:
+        column: sunday_end
+        type: ecps.sunday_end
+      ecps.sunday_start:
+        column: sunday_start
+        type: ecps.sunday_start
+      ecps.thursday_end:
+        column: thursday_end
+        type: ecps.thursday_end
+      ecps.thursday_start:
+        column: thursday_start
+        type: ecps.thursday_start
+      ecps.tuesday_end:
+        column: tuesday_end
+        type: ecps.tuesday_end
+      ecps.tuesday_start:
+        column: tuesday_start
+        type: ecps.tuesday_start
+      ecps.wednesday_end:
+        column: wednesday_end
+        type: ecps.wednesday_end
+      ecps.wednesday_start:
+        column: wednesday_start
+        type: ecps.wednesday_start
+      ol.datasource:
+        column: datasource
+        type: ol.datasource
+      ol.id:
+        column: id          # same as license_number. ("fnumber" in cleaned table)
+        type: ol.id
+
+
