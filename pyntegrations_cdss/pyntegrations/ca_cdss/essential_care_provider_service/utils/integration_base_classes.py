@@ -124,7 +124,7 @@ class Integration(object):
         self.configuration = of.get_config(jwt=token, base_url='https://api.openlattice.com')
         self.flight = flight.Flight(configuration=self.configuration)
         self.flight.deserialize(self.flight_path)
-        self.engine = sqlalchemy.create_engine(f'''postgresql://{dbuser}:{dbpw}@atlas.openlattice.com:30001/{db}''')
+        self.engine = sqlalchemy.create_engine(f'''postgresql://{dbuser}:{dbpw}@atlas-writer.cukntkiejy0u.us-west-2.rds.amazonaws.com:30001/{db}''')
 
     def clean_row(cls, row):
         raise NotImplementedError("clean_row is not defined for this integration.")
