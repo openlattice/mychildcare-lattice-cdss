@@ -9,8 +9,8 @@ from pyntegrations_cdss.pyntegrations.ca_cdss.essential_care_provider_service.ut
     by grabbing username and password from the environment. If this job is run in Rundeck, the function grabs
     them from Rundeck key storage.  
 '''
-user = os.environ.get("RD_OPTION_DB_USER") # credential is stored within Rundeck and retrieved here
-pw = os.environ.get("RD_OPTION_DB_PASSWORD") # this credential is stored within Rundeck and retrieved here
+user = os.environ.get("RD_OPTION_OL_USER") # credential is stored within Rundeck and retrieved here
+pw = os.environ.get("RD_OPTION_OL_PASSWORD") # this credential is stored within Rundeck and retrieved here
 client_id = os.environ.get("RD_OPTION_OL_CLIENT_ID") # this credential is stored within Rundeck and retrieved here
 
 token = of.get_jwt(user, pw, client_id)
@@ -42,8 +42,8 @@ for x in integrations:
         clean_table_name=clean_table_name,
         shuttle_path=os.path.join(
             os.environ.get("HOME"),
-            "openlattice/openlattice/shuttle/shuttle-0.0.4-SNAPSHOT/bin/shuttle",
+            "opt/openlattice/shuttle/bin/shuttle",
         ),
-        local=True,
+        # local=True, #uncomment this if you are integrating to your local computer (and have a copy of the stack running)
         shuttle_args =  ' --upload-size 1000'
     )

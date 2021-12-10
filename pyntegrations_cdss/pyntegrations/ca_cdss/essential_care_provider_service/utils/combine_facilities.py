@@ -6,7 +6,7 @@ import datetime
 import os
 
 from pyntegrations_cdss.pyntegrations.ca_cdss.essential_care_provider_service.utils import clean_raw, clean_processed
-from pyntegrations_cdss.pyntegrations.ca_cdss.essential_care_provider_service.utils import openlattice_functions as of
+# from pyntegrations_cdss.pyntegrations.ca_cdss.essential_care_provider_service.utils import openlattice_functions as of
 
 # Takes 3 source tables received from CDSS and combines them into 1 called 'f"ccl_openlattice_{datetime.now().strftime("%Y_%m_%d")}'
 # ...and this combined table is what gets passed into the integration cleaning function
@@ -19,7 +19,7 @@ def get_and_process_ccp_data(organization_id):
     user = os.environ.get("RD_OPTION_DB_USER") # credential is stored within Rundeck and retrieved here
     pw = os.environ.get("RD_OPTION_DB_PASSWORD") # this credential is stored within Rundeck and retrieved here
     db = "org_5752d58c68a544b0906b67e885d41762"  # STAGING DATABASE NAME
-    engine = sq.create_engine(f'''postgresql://{user}:{pw}@atlas.openlattice.com:30001/{db}''')
+    engine = sq.create_engine(f'''postgresql://{user}:{pw}@atlas-writer.cukntkiejy0u.us-west-2.rds.amazonaws.com:30001/{db}''')
 
 
     print("reading closure data...")
@@ -68,7 +68,7 @@ def get_and_process_ccp_data(organization_id):
                       mccp.assign(fnumber=mccp.fnumber.astype(str)),
                       how='left', on='fnumber')
 
-    merged.ccl_closure_last_update = merged.ccl_closure_last_update.astype('datetime64[ns, US/Pacific]') # the 'Modified' datetime from closures file
+    merged.ccl_closure_last_update = merged.ccl_closure_last_update.astype('datetime64[ns, America/Los_Angeles]') # the 'Modified' datetime from closures file
     merged.eb_last_update = merged.eb_last_update.astype('datetime64[ns, US/Eastern]')
     merged.mccp_last_update = merged.mccp_last_update.astype('datetime64[ns, US/Eastern]')
     merged.ccp_last_update = merged.ccp_last_update.astype('datetime64[ns, US/Eastern]')

@@ -24,12 +24,12 @@ class EssentialCareProviderServiceIntegration(Integration):
             # and this served as a placeholder, otherwise would give
             # an error.
             if_exists="replace",
-            clean_table_name_root="essential_care_provider_service_facilities", "zzz_kimtest_transfer",
+            clean_table_name_root="essential_care_provider_service_facilities", #"zzz_kimtest_transfer",
             standardize_clean_table_name=False,
             drop_table_on_success=False
         )
         self.sql = self.get_updated_data_sql()
-        self.atlas_engine = sq.create_engine(f'''postgresql://{user}:{pw}@atlas.openlattice.com:30001/{db}''')
+        self.atlas_engine = sq.create_engine(f'''postgresql://{user}:{pw}@atlas-writer.cukntkiejy0u.us-west-2.rds.amazonaws.com:30001/{db}''')
 
         self.coordinates_with_address = pd.DataFrame(self.atlas_engine.execute('''select distinct * 
                                                                         from zzz_locationcoordinates_with_address
@@ -44,7 +44,7 @@ class EssentialCareProviderServiceIntegration(Integration):
         data = combine_facilities.get_and_process_ccp_data(self.flight.organization_id)
 
         # write data to database
-        engine = sq.create_engine(f'''postgresql://{user}:{pw}@atlas.openlattice.com:30001/{db}''')
+        engine = sq.create_engine(f'''postgresql://{user}:{pw}@atlas-writer.cukntkiejy0u.us-west-2.rds.amazonaws.com:30001/{db}''')
         table_name =  f'ccl_openlattice_{datetime.now().strftime("%Y_%m_%d")}' #'zzz_kim_testcombine'
         data.to_sql(f'{table_name}', engine, chunksize=10000, method="multi", if_exists="replace")
         return f"select * from {table_name}"

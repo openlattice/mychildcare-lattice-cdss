@@ -15,7 +15,7 @@ import os
 import re
 import time
 
-# Small functions used in the larger functions in combine_facilities.py and integration_definitions_atlas.py
+# Small functions used in the larger functions in combine_facilities.py and integration_definitions.py
 
 def get_zip(x):
     if pd.isna(x):
