@@ -2,7 +2,7 @@ import olpy
 from olpy.clean.atlas import get_atlas_engine_for_organization
 
 # Gets the atlas engine for the organization
-engine = get_atlas_engine_for_organization('5752d58c-68a5-44b0-906b-67e885d41762', olpy.get_config())
+engine = get_atlas_engine_for_organization('ab960cc5-511b-4fd7-ad39-e365ead19ba8', olpy.get_config())
 
 # This should be rerun if the integration ever needs to be reset. This SQL statement:
 # 1. drops the tables if for some reason the tables still exist
