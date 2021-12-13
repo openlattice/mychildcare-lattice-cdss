@@ -2,7 +2,7 @@ from auth0.v3.authentication import GetToken
 import openlattice
 import os
 
-def get_jwt(username = None, password = None, client_id = None, base_url='https://api.openlattice.com'):
+def get_jwt(username = None, password = None, client_id = None, base_url='https://api.mychildcare.dss.ca.gov'):
     """
     Gets the jwt token for a given usr/pw from a given url.
     """
@@ -34,7 +34,7 @@ def get_jwt(username = None, password = None, client_id = None, base_url='https:
     if 'RD_JOB_ID' in environment:
         env = 'rundeck'
     else:
-        env = 'local_to_prod' if 'api.openlattice.com' in base_url else 'local_to_local'
+        env = 'local_to_prod' if 'https://api.mychildcare.dss.ca.gov' in base_url else 'local_to_local'
     env = envvars[env]
 
     if username:
@@ -43,7 +43,7 @@ def get_jwt(username = None, password = None, client_id = None, base_url='https:
         env['password'] = password
     if client_id:
         env['client_id'] = client_id
-    if not 'api.openlattice.com' in base_url:
+    if not 'https://api.mychildcare.dss.ca.gov' in base_url:
         base_url = 'https://openlattice.auth0.com/userinfo'
 
     if not (env['user'] and env['password'] and env['client_id']):
@@ -63,7 +63,7 @@ def get_jwt(username = None, password = None, client_id = None, base_url='https:
         )
     return token['id_token']
 
-def get_config(jwt = None, base_url = "https://api.openlattice.com"):
+def get_config(jwt = None, base_url = "https://api.mychildcare.dss.ca.gov"):
     if not jwt:
         jwt = get_jwt(base_url = base_url)
     configuration = openlattice.Configuration()

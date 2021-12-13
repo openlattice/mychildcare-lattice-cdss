@@ -16,10 +16,10 @@ def get_and_process_ccp_data(organization_id):
     # token = of.get_jwt(user, pw, client_id)
     # conf = of.get_config(jwt = token, base_url='https://api.openlattice.com')
 
-    user = os.environ.get("RD_OPTION_DB_USER") # credential is stored within Rundeck and retrieved here
-    pw = os.environ.get("RD_OPTION_DB_PASSWORD") # this credential is stored within Rundeck and retrieved here
-    db = "org_5752d58c68a544b0906b67e885d41762"  # STAGING DATABASE NAME
-    engine = sq.create_engine(f'''postgresql://{user}:{pw}@atlas-writer.cukntkiejy0u.us-west-2.rds.amazonaws.com:30001/{db}''')
+    dbuser = os.environ.get("RD_OPTION_DB_USER") # credential is stored within Rundeck and retrieved here
+    dbpw = os.environ.get("RD_OPTION_DB_PASSWORD") # this credential is stored within Rundeck and retrieved here
+    db = "org_ab960cc5511b4fd7ad39e365ead19ba8"  # STAGING DATABASE NAME
+    engine = sq.create_engine(f'''postgresql://{dbuser}:{dbpw}@atlas-writer.cukntkiejy0u.us-west-2.rds.amazonaws.com:30001/{db}''')
 
 
     print("reading closure data...")
