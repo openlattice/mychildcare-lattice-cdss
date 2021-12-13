@@ -11,8 +11,8 @@ import sqlalchemy
 import pandas as pd
 from pytz import timezone
 from urllib.parse import unquote
-from pyntegrations_cdss.pyntegrations.ca_cdss.essential_care_provider_service.utils import flight
-import pyntegrations_cdss.pyntegrations.ca_cdss.essential_care_provider_service.utils.openlattice_functions as of
+from pyntegrationscdss.pyntegrations.ca_cdss.essential_care_provider_service.utils import flight
+import pyntegrationscdss.pyntegrations.ca_cdss.essential_care_provider_service.utils.openlattice_functions as of
 
 
 """ 

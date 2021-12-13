@@ -1,6 +1,6 @@
 from ..essential_care_provider_service.utils import combine_facilities, clean_processed
-from pyntegrations_cdss.pyntegrations.ca_cdss.essential_care_provider_service.utils.integration_base_classes import Integration
-import pyntegrations_cdss.pyntegrations.ca_cdss.essential_care_provider_service.utils as utils
+from pyntegrationscdss.pyntegrations.ca_cdss.essential_care_provider_service.utils.integration_base_classes import Integration
+import pyntegrationscdss.pyntegrations.ca_cdss.essential_care_provider_service.utils as utils
 from pkg_resources import resource_filename
 from dateutil.tz import gettz
 from datetime import datetime

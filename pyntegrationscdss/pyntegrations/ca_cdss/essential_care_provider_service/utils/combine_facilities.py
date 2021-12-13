@@ -5,8 +5,8 @@ import numpy as np
 import datetime
 import os
 
-from pyntegrations_cdss.pyntegrations.ca_cdss.essential_care_provider_service.utils import clean_raw, clean_processed
-# from pyntegrations_cdss.pyntegrations.ca_cdss.essential_care_provider_service.utils import openlattice_functions as of
+from pyntegrationscdss.pyntegrations.ca_cdss.essential_care_provider_service.utils import clean_raw, clean_processed
+# from pyntegrationscdss.pyntegrations.ca_cdss.essential_care_provider_service.utils import openlattice_functions as of
 
 # Takes 3 source tables received from CDSS and combines them into 1 called 'f"ccl_openlattice_{datetime.now().strftime("%Y_%m_%d")}'
 # ...and this combined table is what gets passed into the integration cleaning function
