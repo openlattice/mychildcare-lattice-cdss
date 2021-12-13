@@ -25,7 +25,7 @@ dbpw = os.environ.get("RD_OPTION_DB_PASSWORD") # this credential is stored withi
 user = os.environ.get("RD_OPTION_OL_USER") # credential is stored within Rundeck and retrieved here
 pw = os.environ.get("RD_OPTION_OL_PASSWORD") # this credential is stored within Rundeck and retrieved here
 client_id = os.environ.get("RD_OPTION_OL_CLIENT_ID") # this credential is stored within Rundeck and retrieved here
-db = "org_5752d58c68a544b0906b67e885d41762"  # STAGING DATABASE NAME
+db = "org_ab960cc5511b4fd7ad39e365ead19ba8"  # STAGING DATABASE NAME
 
 
 class Integration(object):
