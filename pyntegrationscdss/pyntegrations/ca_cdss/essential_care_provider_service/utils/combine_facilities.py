@@ -23,7 +23,7 @@ def get_and_process_ccp_data(organization_id):
 
 
     print("reading closure data...")
-    clos_data = pd.read_sql_table('cdss_export_facilityclosures', engine) #auto-updated table via launchpad
+    clos_data = pd.read_sql_table('openlattice.cdss_export_facilityclosures', engine) #auto-updated table via launchpad
     clos = process_closures(clos_data)
 
     print("reading mccp data...")
