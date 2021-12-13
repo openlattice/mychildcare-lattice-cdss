@@ -1,8 +1,7 @@
 import os
-import pyntegrations_cdss
-from pyntegrations_cdss.pyntegrations.ca_cdss.essential_care_provider_service.utils import flight
-from pyntegrations_cdss.pyntegrations.ca_cdss.essential_care_provider_service.utils import openlattice_functions as of
-
+import pyntegrationscdss
+from pyntegrationscdss.pyntegrations.ca_cdss.essential_care_provider_service.utils import flight
+from pyntegrationscdss.pyntegrations.ca_cdss.essential_care_provider_service.utils import openlattice_functions as of
 
 '''
     Calls upon "get_jwt" and "get_config" in openlattice_functions.py to obtain your authorization to the needed entity sets
@@ -18,11 +17,11 @@ configuration = of.get_config(jwt = token, base_url='https://api.openlattice.com
 
 
 integrations = [
-    pyntegrations_cdss.pyntegrations.ca_cdss.essential_care_provider_service.integration_definitions.EssentialCareProviderServiceIntegration,
-    pyntegrations_cdss.ca_cdss.essential_care_provider_service.integration_definitions.RRIntegration,
-    pyntegrations_cdss.ca_cdss.essential_care_provider_service.integration_definitions.HospitalIntegration,
-    pyntegrations_cdss.ca_cdss.essential_care_provider_service.integration_definitions.FacilitiesToRRIntegration,
-    pyntegrations_cdss.ca_cdss.essential_care_provider_service.integration_definitions.FacilitiesToHospitalsIntegration
+    pyntegrationscdss.pyntegrations.ca_cdss.essential_care_provider_service.integration_definitions.EssentialCareProviderServiceIntegration,
+    pyntegrationscdss.ca_cdss.essential_care_provider_service.integration_definitions.RRIntegration,
+    pyntegrationscdss.ca_cdss.essential_care_provider_service.integration_definitions.HospitalIntegration,
+    pyntegrationscdss.ca_cdss.essential_care_provider_service.integration_definitions.FacilitiesToRRIntegration,
+    pyntegrationscdss.ca_cdss.essential_care_provider_service.integration_definitions.FacilitiesToHospitalsIntegration
 ]
 
 for x in integrations:

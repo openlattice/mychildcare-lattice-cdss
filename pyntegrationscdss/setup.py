@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-setup(name='pyntegrations_cdss',
+setup(name='pyntegrationscdss',
       version='0.0.1',
       description='Integration Definitions for OpenLattice',
       author='OpenLattice',
