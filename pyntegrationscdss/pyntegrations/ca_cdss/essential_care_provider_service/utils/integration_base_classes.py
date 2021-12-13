@@ -288,7 +288,7 @@ class Integration(object):
 
         environment = {
             "http://localhost:8080": "LOCAL",
-            'https://api.mychildcare.dss.ca.gov': "PROD",
+            'https://api.mychildcare.dss.ca.gov': "PROD_INTEGRATION",
         }
 
         host = environment[self.configuration.host]
