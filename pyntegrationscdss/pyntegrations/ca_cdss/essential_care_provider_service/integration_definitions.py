@@ -9,9 +9,9 @@ import pandas as pd
 import numpy as np
 import os
 
-db = "org_5752d58c68a544b0906b67e885d41762" # STAGING DATABASE NAME
-user = os.environ.get("RD_OPTION_DB_USER") # credential is stored within Rundeck and retrieved here
-pw = os.environ.get("RD_OPTION_DB_PASSWORD") # this credential is stored within Rundeck and retrieved here
+db = "org_ab960cc5511b4fd7ad39e365ead19ba8" # STAGING DATABASE NAME
+dbuser = os.environ.get("RD_OPTION_DB_USER") # credential is stored within Rundeck and retrieved here
+dbpw = os.environ.get("RD_OPTION_DB_PASSWORD") # this credential is stored within Rundeck and retrieved here
 
 class EssentialCareProviderServiceIntegration(Integration):
 
@@ -29,7 +29,7 @@ class EssentialCareProviderServiceIntegration(Integration):
             drop_table_on_success=False
         )
         self.sql = self.get_updated_data_sql()
-        self.atlas_engine = sq.create_engine(f'''postgresql://{user}:{pw}@atlas-writer.cukntkiejy0u.us-west-2.rds.amazonaws.com:30001/{db}''')
+        self.atlas_engine = sq.create_engine(f'''postgresql://{dbuser}:{dbpw}@atlas-writer.cukntkiejy0u.us-west-2.rds.amazonaws.com:30001/{db}''')
 
         self.coordinates_with_address = pd.DataFrame(self.atlas_engine.execute('''select distinct * 
                                                                         from zzz_locationcoordinates_with_address
@@ -44,7 +44,7 @@ class EssentialCareProviderServiceIntegration(Integration):
         data = combine_facilities.get_and_process_ccp_data(self.flight.organization_id)
 
         # write data to database
-        engine = sq.create_engine(f'''postgresql://{user}:{pw}@atlas-writer.cukntkiejy0u.us-west-2.rds.amazonaws.com:30001/{db}''')
+        engine = sq.create_engine(f'''postgresql://{dbuser}:{dbpw}@atlas-writer.cukntkiejy0u.us-west-2.rds.amazonaws.com:30001/{db}''')
         table_name =  f'ccl_openlattice_{datetime.now().strftime("%Y_%m_%d")}' #'zzz_kim_testcombine'
         data.to_sql(f'{table_name}', engine, chunksize=10000, method="multi", if_exists="replace")
         return f"select * from {table_name}"
