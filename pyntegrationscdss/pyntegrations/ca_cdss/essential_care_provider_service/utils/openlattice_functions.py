@@ -7,7 +7,7 @@ def get_jwt(username = None, password = None, client_id = None, base_url='https:
     Gets the jwt token for a given usr/pw from a given url.
     """
 
-    domain='openlattice.auth0.com'
+    domain='dev-elp-ybhu.us.auth0.com'
     realm='Username-Password-Authentication'
     scope='openid email nickname roles user_id organizations'
 
