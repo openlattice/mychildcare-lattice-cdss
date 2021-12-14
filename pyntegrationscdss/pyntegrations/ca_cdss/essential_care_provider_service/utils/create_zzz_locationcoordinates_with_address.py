@@ -1,8 +1,12 @@
-import olpy
-from olpy.clean.atlas import get_atlas_engine_for_organization
+import sqlalchemy as sq
+import os
 
-# Gets the atlas engine for the organization
-engine = get_atlas_engine_for_organization('ab960cc5-511b-4fd7-ad39-e365ead19ba8', olpy.get_config())
+# Log into atlas
+db = "org_ab960cc5511b4fd7ad39e365ead19ba8" # STAGING DATABASE NAME
+dbuser = os.environ.get("RD_OPTION_DB_USER") # credential is stored within Rundeck and retrieved here
+dbpw = os.environ.get("RD_OPTION_DB_PASSWORD") # this credential is stored within Rundeck and retrieved here
+
+engine = sq.create_engine(f'''postgresql://{dbuser}:{dbpw}@atlas-writer.cukntkiejy0u.us-west-2.rds.amazonaws.com:30001/{db}''')
 
 # This should be rerun if the integration ever needs to be reset. This SQL statement:
 # 1. drops the tables if for some reason the tables still exist
@@ -33,6 +37,7 @@ engine.execute('''
     create table zzz_locationcoordinates_no_address as
         select distinct * from zzz_locationcoordinates 
         where faddress is null;''')
+
 
 ### Note
 # All locationcoordinates have a city and a zip. Most have an address, some have none.
