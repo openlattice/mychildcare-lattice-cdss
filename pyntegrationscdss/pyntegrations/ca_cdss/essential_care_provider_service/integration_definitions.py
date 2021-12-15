@@ -273,7 +273,7 @@ class FacilitiesToHospitalsIntegration(Integration):
 
     def get_updated_data_sql(self):
 
-        engine = self.sq.create_engine(f'''postgresql://{dbuser}:{dbpw}@atlas-writer.cukntkiejy0u.us-west-2.rds.amazonaws.com:30001/{db}''')
+        engine = sq.create_engine(f'''postgresql://{dbuser}:{dbpw}@atlas-writer.cukntkiejy0u.us-west-2.rds.amazonaws.com:30001/{db}''')
         hospitals = pd.read_sql('select locationcoordinates, id as id_hospital from essential_care_provider_service_hospitals', engine)
         hospitals_loc_splitted = hospitals.locationcoordinates.str.split(",", expand=True)
         hospitals_loc_splitted = hospitals_loc_splitted.replace('', np.nan, regex=True)
