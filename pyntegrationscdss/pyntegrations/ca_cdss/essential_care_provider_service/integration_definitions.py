@@ -2,12 +2,15 @@ from ..essential_care_provider_service.utils import combine_facilities, clean_pr
 from pyntegrationscdss.pyntegrations.ca_cdss.essential_care_provider_service.utils.integration_base_classes import Integration
 import pyntegrationscdss.pyntegrations.ca_cdss.essential_care_provider_service.utils as utils
 from pkg_resources import resource_filename
+from pandarallel import pandarallel
 from dateutil.tz import gettz
 from datetime import datetime
 import sqlalchemy as sq
 import pandas as pd
 import numpy as np
 import os
+
+pandarallel.initialize()
 
 db = "org_ab960cc5511b4fd7ad39e365ead19ba8" # STAGING DATABASE NAME
 dbuser = os.environ.get("RD_OPTION_DB_USER") # credential is stored within Rundeck and retrieved here
